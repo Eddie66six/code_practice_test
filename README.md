@@ -11,7 +11,7 @@
   <li>run command
     <ul>
       <li>npm run test_iniciante :heavy_check_mark:</li>
-      <li>npm run test_intermediario :x:</li>
+      <li>npm run test_intermediario :heavy_check_mark:</li>
       <li>npm run test_avancado :x:</li>
     </ul>
   </li>
