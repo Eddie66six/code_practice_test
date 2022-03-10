@@ -7,6 +7,7 @@
 ## Run
 <ol>
   <li>open folder language</li>
+  <li>put the code in the codes folder</li>
   <li>run command
     <ul>
       <li>npm run test_iniciante :heavy_check_mark:</li>
