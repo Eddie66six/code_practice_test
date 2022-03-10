@@ -1,0 +1,16 @@
+{
+  "name": "teste_javascript",
+  "version": "1.0.0",
+  "description": "Projeto para testar logica de programação",
+  "main": "index.js",
+  "scripts": {
+    "test_iniciante": "mocha testes/iniciante.js",
+    "test_intermediario": "mocha testes/intermediario.js",
+    "test_avancado": "mocha testes/avancado.js"
+  },
+  "author": "Eddie66six",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^9.2.1"
+  }
+}
