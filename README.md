@@ -10,7 +10,7 @@
   <li>dart
     <ul>
       <li>beginner :heavy_check_mark:</li>
-      <li>intermediary :x:</li>
+      <li>intermediary :heavy_check_mark:</li>
       <li>advanced :x:</li>
     </ul>
   </li>
@@ -47,14 +47,14 @@
       </li>
     </ul>
   </li>
-  <li>dart :x:
+  <li>dart
     <ul>
       <li>open folder language</li>
       <li>put the code in the lib folder</li>
       <li>run command
         <ul>
           <li>flutter test test/iniciante.dart</li>
-          <!-- <li>flutter test test/intermediario.dart</li> -->
+          <li>flutter test test/intermediario.dart</li>
           <!-- <li>flutter test test/avancado.dart</li> -->
         </ul>
       </li>
