@@ -13,7 +13,7 @@ describe('contar caracteres', function() {
 describe('contar caracteres repetidos', function() {
     it('teste 1', function() {
         let str = 'Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo';
-        let strR = false;
+        let strR = true;
         assert.ok(objTest.contarECompararCaracteresAO(str) == strR, shared.formatarErro(str, strR));
     })
 })
