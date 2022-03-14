@@ -13,7 +13,7 @@ describe('contar caracteres', function() {
 describe('contar caracteres repetidos', function() {
     it('teste 1', function() {
         let str = 'Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo';
-        let strR = true;
+        let strR = false;
         assert.ok(objTest.contarECompararCaracteresAO(str) == strR, shared.formatarErro(str, strR));
     })
 })
@@ -21,7 +21,7 @@ describe('contar caracteres repetidos', function() {
 describe('index char', function() {
     it('teste 1', function() {
         let str = 'Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo';
-        let strR = [4,7,12,15,24,27,40,43,48,59,62,66,70,75,81,87,90,93,95,101,103];
+        let strR = [4, 7, 12, 27, 48, 62, 87];
         assert.ok(objTest.obterIndexAO(str).join('-') == strR.join('-'), shared.formatarErro(str, strR.join(',')));
     })
 })

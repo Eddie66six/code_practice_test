@@ -24,7 +24,7 @@ function obterIndexAO(str){
 }
 
 /**
- * Inverta as palavras que tem mais de 5 caracteres
+ * Inverta as palavras que tem mais de 4 caracteres
  * ex: oi menu nome é guilherme
  * r: oi meu nome é emrehliug
 */
