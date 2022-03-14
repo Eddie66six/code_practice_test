@@ -22,7 +22,7 @@ describe('index char', function() {
     it('teste 1', function() {
         let str = 'Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo';
         let strR = [4,7,12,15,24,27,40,43,48,59,62,66,70,75,81,87,90,93,95,101,103];
-        assert.ok(objTest.obterIndexAO(str) == strR, shared.formatarErro(str, strR.join(',')));
+        assert.ok(objTest.obterIndexAO(str).join('-') == strR.join('-'), shared.formatarErro(str, strR.join(',')));
     })
 })
 
