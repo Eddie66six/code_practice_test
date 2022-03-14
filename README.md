@@ -11,7 +11,7 @@
     <ul>
       <li>beginner :heavy_check_mark:</li>
       <li>intermediary :heavy_check_mark:</li>
-      <li>advanced :x:</li>
+      <li>advanced :heavy_check_mark:</li>
     </ul>
   </li>
 </ol>
@@ -55,7 +55,7 @@
         <ul>
           <li>flutter test test/iniciante.dart</li>
           <li>flutter test test/intermediario.dart</li>
-          <!-- <li>flutter test test/avancado.dart</li> -->
+          <li>flutter test test/avancado.dart</li>
         </ul>
       </li>
     </ul>
