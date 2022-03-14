@@ -4,7 +4,7 @@
     <ul>
       <li>beginner :heavy_check_mark:</li>
       <li>intermediary :heavy_check_mark:</li>
-      <li>advanced :x:</li>
+      <li>advanced :heavy_check_mark:</li>
     </ul>
   </li>
   <li>dart
@@ -42,7 +42,7 @@
         <ul>
           <li>npm run test_iniciante</li>
           <li>npm run test_intermediario</li>
-          <!-- <li>npm run test_avancado</li> -->
+          <li>npm run test_avancado</li>
         </ul>
       </li>
     </ul>
