@@ -14,6 +14,13 @@
       <li>advanced :heavy_check_mark:</li>
     </ul>
   </li>
+  <li>c#
+    <ul>
+      <li>beginner :heavy_check_mark:</li>
+      <li>intermediary :x:</li>
+      <li>advanced :x:</li>
+    </ul>
+  </li>
 </ol>
 
 ## Install
@@ -56,6 +63,19 @@
           <li>flutter test test/iniciante.dart</li>
           <li>flutter test test/intermediario.dart</li>
           <li>flutter test test/avancado.dart</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>c#
+    <ul>
+      <li>open folder language</li>
+      <li>open project</li>
+      <li>put the code in the files</li>
+      <li>open test explorer
+        <ul>
+          <li>select test</li>
+          <li>run test</li>
         </ul>
       </li>
     </ul>
