@@ -3,7 +3,7 @@
 /// ex: https://www.youtube.com/watch?v=xvQeQFfXk44
 /// r: xvQeQFfXk44
 ///
-String obterIdVideoYouTube(str){
+String obterIdVideoYouTube(String str){
   return "";
 }
 
@@ -12,7 +12,7 @@ String obterIdVideoYouTube(str){
 /// ex: https://urlQualquer?parametro=1&p=2&nome=guilherme
 /// r: {parametro: '1',nome: '2',nome: 'guilherme'}
 ///
-Map<String, dynamic> obterParametrosQueryString(str){
+Map<String, dynamic> obterParametrosQueryString(String str){
   return {};
 }
 
@@ -64,7 +64,7 @@ Map<String, dynamic> obterParametrosQueryString(str){
 ///  }
 /// }
 ///
-Map<String, dynamic> agruparObjetosPorCampo(lstObj, campo){
+Map<String, dynamic> agruparObjetosPorCampo(List<Map<String, dynamic>> lstObj, String campo){
   return {};
 }
 
@@ -77,6 +77,6 @@ Map<String, dynamic> agruparObjetosPorCampo(lstObj, campo){
 /// objBusca: {a:1:b:2}
 /// r: 0
 ///
-int obterIndexListaObj(lstObj, objBusca){
+int obterIndexListaObj(List<Map<String, dynamic>> lstObj, dynamic objBusca){
   return -1;
 }

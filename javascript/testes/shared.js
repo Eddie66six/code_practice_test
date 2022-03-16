@@ -4,8 +4,8 @@ function formatarErro(str, strR){
 
 function equalsObj(obj1, obj2){
     if(!obj1 || !obj2) return false;
-    keysObj1 = Object.keys(obj1);
-    keysObj2 = Object.keys(obj2);
+    keysObj1 = Object.keys(obj1).sort();
+    keysObj2 = Object.keys(obj2).sort();
 
     if(keysObj1.length != keysObj2.length) return false;
     var isEquals = true;
@@ -42,7 +42,7 @@ function equalsListObjs(lst1, lst2){
   if(lst1.length != lst2.length) return false;
   var countEquals = 0;
   for (let index1 = 0; index1 < lst1.length; index1++) {
-    for (let index2 = 0; index2 < lst1.length; index2++) {
+    for (let index2 = 0; index2 < lst2.length; index2++) {
       if(equalsObj(lst1[index1], lst2[index2])){
         countEquals++;
       }
