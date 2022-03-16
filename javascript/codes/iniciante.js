@@ -30,11 +30,35 @@ function contarCaracteresIgnorandoEspaco(str){
 function adicionarItemNoArray(array, str){
 }
 
+/**
+ * remover item do array
+ * ex: array: ['a', 'b', 'h'], str: 'h'
+ * r: ['a', 'b']
+*/
+function removerItemDoArray(array, str){
+}
 
+/**
+ * alterar a primeira letra da palavra para maiuscula
+ * ex: guilherme
+ * r: Guilherme
+*/
+function captalizarSimples(str){
+}
 
+/**
+ * alterar todas sa primeiras letras das palavras para maiuscula
+ * ex: guilherme vai para o mercado
+ * r: Guilherme Vai Para O Mercado
+*/
+function captalizarAvancada(str){
+}
 
 
 exports.concatenar = concatenar;
 exports.gerarArraySeparandoTextoPorEspaco = gerarArraySeparandoTextoPorEspaco;
 exports.contarCaracteresIgnorandoEspaco = contarCaracteresIgnorandoEspaco;
 exports.adicionarItemNoArray = adicionarItemNoArray;
+exports.removerItemDoArray = removerItemDoArray;
+exports.captalizarSimples = captalizarSimples;
+exports.captalizarAvancada = captalizarAvancada;

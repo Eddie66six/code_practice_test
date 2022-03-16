@@ -29,4 +29,24 @@ void main() {
     var strR = ['a', 'b', 'hhh'];
     expect(adicionarItemNoArray(array, str).join('-'), strR.join('-'), reason: formatarErro(array.join(',') + '-' + str, strR.join(',')));
   });
+
+  test('remover item do array', () {
+    var array = ['a', 'b', 'hhh'];
+    var str = 'hhh';
+    var strR = ['a', 'b'];
+    expect(removerItemDoArray(array, str).join('-'),  strR.join('-'),
+            reason: formatarErro(array.join(',') + '+' + str, strR.join(',')));
+  });
+
+  test('captalizar simples', () {
+      var str = 'guilherme';
+      var strR = 'Guilherme';
+      expect(captalizarSimples(str), strR, reason: formatarErro(str, strR));
+  });
+
+  test('captalizar avancada', () {
+      var str = 'guilherme vai para o mercado';
+      var strR = 'Guilherme Vai Para O Mercado';
+      expect(captalizarAvancada(str), strR, reason: formatarErro(str, strR));
+  });
 }

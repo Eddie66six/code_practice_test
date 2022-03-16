@@ -33,5 +33,30 @@
         {
             return new string[0];
         }
+
+        /// remover item do array
+        /// ex: array: ['a', 'b', 'h'], str: 'h'
+        /// r: ['a', 'b']
+        public string[] RemoverItemDoArray(string[] array, string str){
+            return new string[0];
+        }
+
+        ///
+        /// alterar a primeira letra da palavra para maiuscula
+        /// ex: guilherme
+        /// r: Guilherme
+        ///
+        public string CaptalizarSimples(string str){
+            return "";
+        }
+
+        ///
+        /// alterar todas sa primeiras letras das palavras para maiuscula
+        /// ex: guilherme vai para o mercado
+        /// r: Guilherme Vai Para O Mercado
+        ///
+        public string CaptalizarAvancada(string str){
+            return "";
+        }
     }
 }

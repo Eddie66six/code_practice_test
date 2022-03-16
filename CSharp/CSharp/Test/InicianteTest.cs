@@ -43,5 +43,31 @@ namespace CSharp.Test
             Assert.IsTrue(string.Join(",", objTest.AdicionarItemNoArray(array, str)) == string.Join(",", strR),
                 shared.FormatarErro(string.Join(",", array) + '+' + str, string.Join(",", strR)));
         }
+
+        [TestMethod]
+        public void RemoverItemDoArray()
+        {
+            var array = new string[] { "a", "b", "hhh" };
+            var str = "hhh";
+            var strR = new string[] { "a", "b" };
+            Assert.IsTrue(string.Join(",", objTest.RemoverItemDoArray(array, str)) == string.Join(",", strR),
+                shared.FormatarErro(string.Join(",", array) + '+' + str, string.Join(",", strR)));
+        }
+
+        [TestMethod]
+        public void Captalizarsimples()
+        {
+            var str1 = "guilherme";
+            var strR = "Guilherme";
+            Assert.IsTrue(objTest.CaptalizarAvancada(str1) == strR, shared.FormatarErro(str1, strR));
+        }
+
+        [TestMethod]
+        public void CaptalizarAvancada()
+        {
+            var str1 = "guilherme vai para o mercado";
+            var strR = "Guilherme Vai Para O Mercado";
+            Assert.IsTrue(objTest.CaptalizarAvancada(str1) == strR, shared.FormatarErro(str1, strR));
+        }
     }
 }

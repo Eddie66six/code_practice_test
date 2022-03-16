@@ -33,3 +33,30 @@ bool contarCaracteresIgnorandoEspaco(String str){
 List<String> adicionarItemNoArray(List<String> array, String str){
   return [];
 }
+
+///
+/// remover item do array
+/// ex: array: ['a', 'b', 'h'], str: 'h'
+/// r: ['a', 'b']
+///
+List<String> removerItemDoArray(List<String >array, String str){
+  return [];
+}
+
+///
+/// alterar a primeira letra da palavra para maiuscula
+/// ex: guilherme
+/// r: Guilherme
+///
+String captalizarSimples(String str){
+  return "";
+}
+
+///
+/// alterar todas sa primeiras letras das palavras para maiuscula
+/// ex: guilherme vai para o mercado
+/// r: Guilherme Vai Para O Mercado
+///
+String captalizarAvancada(String str){
+  return "";
+}

@@ -36,3 +36,29 @@ describe('adicionar item a um array', function() {
             shared.formatarErro(array.join(',') + '+' + str, strR));
     })
 })
+
+describe('remover item do array', function() {
+    it('teste 1', function() {
+        let array = ['a', 'b', 'hhh'];
+        let str = 'hhh';
+        let strR = ['a', 'b'];
+        assert.ok(objTest.removerItemDoArray(array, str).join('-') == strR.join('-'),
+            shared.formatarErro(array.join(',') + '+' + str, strR.join(',')));
+    })
+})
+
+describe('captalizar simples', function() {
+    it('teste 1', function() {
+        let str = 'guilherme';
+        let strR = 'Guilherme';
+        assert.ok(objTest.captalizarSimples(array, str) == strR, shared.formatarErro(str, strR));
+    })
+})
+
+describe('captalizar avancada', function() {
+    it('teste 1', function() {
+        let str = 'guilherme vai para o mercado';
+        let strR = 'Guilherme Vai Para O Mercado';
+        assert.ok(objTest.captalizarAvancada(array, str) == strR, shared.formatarErro(str, strR));
+    })
+})
