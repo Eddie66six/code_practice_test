@@ -54,17 +54,17 @@ namespace CSharp.Test
                 new { nome= "c", idade= 18, dataNascimento= "23/05/1991" }
             };
             var field = "idade";
-            var strR = new Dictionary<string, object>(){
+            var strR = new Dictionary<string, object[]>(){
                 {
-                    "19", new List<Dictionary<string, object>>() {
-                        new Dictionary<string, object>(){{"nome","a" }, {"idade", 19}, {"dataNascimento", "23/05/1991"}}
+                    "19", new [] {
+                        new { nome= "a", idade= 19, dataNascimento= "23/05/1991" },
                     }
                 },
                 {
-                   "18", new List<Dictionary<string, object>>() {
-                        new Dictionary<string, object>(){{"nome","b" }, {"idade", 18}, {"dataNascimento", "23/06/1991"}},
-                        new Dictionary<string, object>(){{"nome","c" }, {"idade", 18}, {"dataNascimento", "23/05/1991"}}
-                    } 
+                   "18", new [] {
+                        new { nome= "b", idade= 18, dataNascimento= "23/06/1991" },
+                        new { nome= "c", idade= 18, dataNascimento= "23/05/1991" }
+                   } 
                 }
             };
             Assert.IsTrue(shared.EqualsDictionary(objTest.AgruparObjetosPorCampo(lstObj, field), strR), shared.FormatarErro(JsonConvert.SerializeObject(lstObj), JsonConvert.SerializeObject(strR)));

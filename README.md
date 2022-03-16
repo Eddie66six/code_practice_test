@@ -17,8 +17,8 @@
   <li>c#
     <ul>
       <li>beginner :heavy_check_mark:</li>
-      <li>intermediary :x:</li>
-      <li>advanced :x:</li>
+      <li>intermediary :heavy_check_mark:</li>
+      <li>advanced :heavy_check_mark:</li>
     </ul>
   </li>
 </ol>

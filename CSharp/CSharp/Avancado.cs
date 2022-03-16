@@ -25,6 +25,7 @@ namespace CSharp
 
         ///
         /// retornar agrupamento de obj por campo
+        /// Dictionary com lista de Dictionary
         /// ex: 
         /// agrupar por anoDeNascimento
         /// [{
@@ -71,9 +72,11 @@ namespace CSharp
         ///  }
         /// }
         ///
-        public Dictionary<string, object> AgruparObjetosPorCampo(object[] lstObj, string campo){
+        public Dictionary<string, object[]> AgruparObjetosPorCampo(object[] lstObj, string campo){
             return null;
         }
+
+
 
         ///
         /// retornar um array com os parametro(querystring) de um url

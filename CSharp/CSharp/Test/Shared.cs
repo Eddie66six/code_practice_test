@@ -20,8 +20,15 @@ namespace CSharp.Test
         public bool EqualsDictionary(Dictionary<string, string> d1, Dictionary<string, string> d2){
             return d1.OrderBy(kvp => kvp.Key).SequenceEqual(d2.OrderBy(kvp => kvp.Key));
         }
-        public bool EqualsDictionary(Dictionary<string, object> d1, Dictionary<string, object> d2){
-            return d1.OrderBy(kvp => kvp.Key).SequenceEqual(d2.OrderBy(kvp => kvp.Key));
+        public bool EqualsDictionary(Dictionary<string, object[]> d1, Dictionary<string, object[]> d2){
+            if (d1.Count != d2.Count) return false;
+            foreach (var item in d1)
+            {
+                if (!d2.ContainsKey(item.Key)) return false;
+                var d2Value = d2[item.Key];
+                if (!_EqualsListObjs(item.Value, d2Value)) return false;
+            }
+            return true;
         }
 
         private bool _IsPrimitiveType(Type type)
@@ -90,7 +97,7 @@ namespace CSharp.Test
                         break;
                     }
                 }
-                else if (val1 != val2)
+                else if (!val1.Equals(val2))
                 {
                     isEquals = false;
                     break;
