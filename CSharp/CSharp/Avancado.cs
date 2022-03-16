@@ -11,7 +11,7 @@ namespace CSharp
         /// r: xvQeQFfXk44
         ///
         public string ObterIdVideoYouTube(string str){
-        return "";
+            return "";
         }
 
         ///
@@ -20,7 +20,7 @@ namespace CSharp
         /// r: {parametro: '1',nome: '2',nome: 'guilherme'}
         ///
         public Dictionary<string, string> ObterParametrosQueryString(string str){
-        return null;
+            return null;
         }
 
         ///
@@ -72,7 +72,7 @@ namespace CSharp
         /// }
         ///
         public Dictionary<string, object> AgruparObjetosPorCampo(object[] lstObj, string campo){
-        return null;
+            return null;
         }
 
         ///
