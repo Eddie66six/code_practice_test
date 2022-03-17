@@ -51,7 +51,7 @@ describe('captalizar simples', function() {
     it('teste 1', function() {
         let str = 'guilherme';
         let strR = 'Guilherme';
-        assert.ok(objTest.captalizarSimples(array, str) == strR, shared.formatarErro(str, strR));
+        assert.ok(objTest.captalizarSimples(str) == strR, shared.formatarErro(str, strR));
     })
 })
 
@@ -59,6 +59,6 @@ describe('captalizar avancada', function() {
     it('teste 1', function() {
         let str = 'guilherme vai para o mercado';
         let strR = 'Guilherme Vai Para O Mercado';
-        assert.ok(objTest.captalizarAvancada(array, str) == strR, shared.formatarErro(str, strR));
+        assert.ok(objTest.captalizarAvancada(str) == strR, shared.formatarErro(str, strR));
     })
 })
