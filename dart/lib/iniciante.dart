@@ -40,7 +40,7 @@ List<String> adicionarItemNoArray(List<String> array, String str){
 /// r: ['a', 'b']
 ///
 List<String> removerItemDoArray(List<String >array, String str){
-  return [];
+  return[];
 }
 
 ///

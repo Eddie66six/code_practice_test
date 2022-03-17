@@ -42,6 +42,20 @@ function mascararString(str){
 }
 
 
+/**
+ * trocar a posição de um item dentro do array, 
+ * caso o array tenha itens repetidos ou não exita o valor dentro o array
+ * retornalo sem modificar
+ * ex: [1,2,3,4,5] value: 2 newPosition: 0
+ * r: [2,1,3,4,5]
+ * ex: [2,3,1,0,10] value: 10 newPosition: 1
+ * r: [1,10,3,1,0]
+ * ex: [2, 2, 1, 3] value: 2 newPosition: 1
+ * r: [2, 2, 1, 3]
+*/
+function trocarPosicaoItem(array, value, newPosition){
+}
+
 
 
 

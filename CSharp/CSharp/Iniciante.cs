@@ -1,4 +1,6 @@
-﻿namespace CSharp
+﻿using System.Linq;
+
+namespace CSharp
 {
     public class Iniciante
     {

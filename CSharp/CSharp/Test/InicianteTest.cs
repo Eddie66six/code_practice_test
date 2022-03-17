@@ -55,11 +55,11 @@ namespace CSharp.Test
         }
 
         [TestMethod]
-        public void Captalizarsimples()
+        public void CaptalizarSimples()
         {
             var str1 = "guilherme";
             var strR = "Guilherme";
-            Assert.IsTrue(objTest.CaptalizarAvancada(str1) == strR, shared.FormatarErro(str1, strR));
+            Assert.IsTrue(objTest.CaptalizarSimples(str1) == strR, shared.FormatarErro(str1, strR));
         }
 
         [TestMethod]

@@ -47,5 +47,29 @@ namespace CSharp.Test
             strR = "só mais esse etset para ritnarag";
             Assert.IsTrue(objTest.InverterParteDaString(str) == strR, shared.FormatarErro(str, strR));
         }
+
+        [TestMethod]
+        public void MascararStringAteOsUltimos4Digitos()
+        {
+            var str = "123456780";
+            var strR = "#####6780";
+            Assert.IsTrue(objTest.MascararString(str) == strR, shared.FormatarErro(str, strR));
+
+            str = "1234 56780";
+            strR = "#### #6780";
+            Assert.IsTrue(objTest.InverterParteDaString(str) == strR, shared.FormatarErro(str, strR));
+        }
+
+        [TestMethod]
+        public void TrocarPosicaoSeUmItem()
+        {
+            var array = new int[]{1,2,3,4,5};
+            var value = 2;
+            var newPosition = 0;
+            var strR = new int[]{2,1,3,4,5};
+            Assert.IsTrue(string.Join(",", 
+                objTest.TrocarPosicaoItem(array, value, newPosition)) == string.Join(",", strR),
+                    shared.FormatarErro(string.Join(",", array), string.Join(",", strR)));
+        }
     }
 }

@@ -43,3 +43,26 @@ describe("inversão de string", function() {
         assert.ok(objTest.inverterParteDaString(str) == strR, shared.formatarErro(str, strR));
     })
 })
+
+describe("mascarar string até os ultimos 4 digitos", function() {
+    it("teste 1", function() {
+        let str = "123456780";
+        let strR = "#####6780";
+        assert.ok(objTest.mascararString(str) == strR, shared.formatarErro(str, strR));
+    })
+    it("teste 2", function() {
+        let str = "1234 56780";
+        let strR = "#### #6780";
+        assert.ok(objTest.mascararString(str) == strR, shared.formatarErro(str, strR));
+    })
+})
+
+describe("index char a,o", function() {
+    it("teste 1", function() {
+        let array = [1,2,3,4,5];
+        let value = 2;
+        let newPosition = 0;
+        let strR = [2,1,3,4,5];
+        assert.ok(objTest.trocarPosicaoItem(array,value, newPosition).join("-") == strR.join("-"), shared.formatarErro(array.join(','), strR.join(",")));
+    })
+})

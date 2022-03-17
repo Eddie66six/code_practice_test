@@ -39,4 +39,25 @@ void main() {
       expect(inverterParteDaString(str), strR, reason: formatarErro(str, strR));
     });
   });
+
+  group("mascarar string até os ultimos 4 digitos", (){
+    test("test 1", () {
+      var str = "123456780";
+      var strR = "#####6780";
+      expect(mascararString(str), strR, reason: formatarErro(str, strR));
+    });
+    test("trocar posicao de um item", () {
+      var str = "1234 56780";
+      var strR = "#### #6780";
+      expect(mascararString(str), strR, reason: formatarErro(str, strR));
+    });
+  });
+
+  test("trocar posicao de um item", () {
+    var array = [1,2,3,4,5];
+    var value = 2;
+    var newPosition = 0;
+    var strR = [2,1,3,4,5];
+    expect(trocarPosicaoItem(array,value, newPosition).join("-"), strR.join("-"), reason: formatarErro(array.join(','), strR.join(",")));
+  });
 }
