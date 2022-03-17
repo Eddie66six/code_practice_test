@@ -2,7 +2,7 @@ var assert = require("assert");
 var shared = require("./shared.js");
 var objTest = require("../codes/intermediario.js");
 
-describe("contar caracteres", function() {
+describe("contar caracteres a", function() {
     it("teste 1", function() {
         let str = "um macaco come banana";
         let strR = 5;
@@ -10,7 +10,7 @@ describe("contar caracteres", function() {
     })
 })
 
-describe("contar caracteres repetidos", function() {
+describe("contar caracteres repetidos a,o", function() {
     it("teste 1", function() {
         let str = "Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo";
         let strR = false;
@@ -18,7 +18,7 @@ describe("contar caracteres repetidos", function() {
     })
 })
 
-describe("index char", function() {
+describe("index char a,o", function() {
     it("teste 1", function() {
         let str = "Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo";
         let strR = [4, 7, 12, 27, 48, 62, 87];
