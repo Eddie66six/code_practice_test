@@ -47,7 +47,7 @@ function captalizarSimples(str){
 }
 
 /**
- * alterar todas sa primeiras letras das palavras para maiuscula
+ * alterar todas as primeiras letras das palavras para maiuscula
  * ex: guilherme vai para o mercado
  * r: Guilherme Vai Para O Mercado
 */
