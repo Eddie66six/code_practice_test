@@ -72,3 +72,4 @@ exports.contarECompararCaracteresAO = contarECompararCaracteresAO;
 exports.obterIndexAO = obterIndexAO;
 exports.inverterParteDaString = inverterParteDaString;
 exports.mascararString = mascararString;
+exports.reduzirNumerosDaString = reduzirNumerosDaString;
