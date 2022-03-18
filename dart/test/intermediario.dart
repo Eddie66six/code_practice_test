@@ -60,4 +60,10 @@ void main() {
     var strR = [2,1,3,4,5];
     expect(trocarPosicaoItem(array,value, newPosition).join("-"), strR.join("-"), reason: formatarErro(array.join(','), strR.join(",")));
   });
+
+  test("reduzir digitos de uma string", () {
+    var str = "942";
+    var strR = 6;
+    expect(reduzirNumerosDaString(str), strR, reason: formatarErro(str, strR.toString()));
+  });
 }

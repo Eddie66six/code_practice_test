@@ -60,3 +60,13 @@ String mascararString(String str){
 List<int> trocarPosicaoItem(List<int> array, int value, int newPosition){
   return [];
 }
+
+///
+/// reduzir os digitos de uma string até chegar a 1 digito
+/// ex: 942
+/// calc: 9 + 4 + 2 = 15  -->  1 + 5 = 6
+/// r: 6
+///
+int reduzirNumerosDaString(String str){
+  return -1;
+}

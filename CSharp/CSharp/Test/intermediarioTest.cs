@@ -71,5 +71,13 @@ namespace CSharp.Test
                 objTest.TrocarPosicaoItem(array, value, newPosition)) == string.Join(",", strR),
                     shared.FormatarErro(string.Join(",", array), string.Join(",", strR)));
         }
+
+        [TestMethod]
+        public void ReduzirDigitosDeUmaString()
+        {
+            var str = "942";
+            var strR = 6;
+            Assert.IsTrue(objTest.ReduzirNumerosDaString(str) == strR, shared.FormatarErro(str, strR.ToString()));
+        }
     }
 }

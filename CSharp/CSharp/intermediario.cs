@@ -52,5 +52,13 @@ namespace CSharp
         public int[] TrocarPosicaoItem(int[] array, int value, int newPosition){
             return new int[0];
         }
+
+        /// reduzir os digitos de uma string até chegar a 1 digito
+        /// ex: 942
+        /// calc: 9 + 4 + 2 = 15  -->  1 + 5 = 6
+        /// r: 6
+        public int ReduzirNumerosDaString(string str){
+            return -1;
+        }
     }
 }

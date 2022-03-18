@@ -66,3 +66,11 @@ describe("index char a,o", function() {
         assert.ok(objTest.trocarPosicaoItem(array,value, newPosition).join("-") == strR.join("-"), shared.formatarErro(array.join(','), strR.join(",")));
     })
 })
+
+describe("reduzir digitos de uma string", function() {
+    it("teste 1", function() {
+        let str = "942";
+        let strR = 6;
+        assert.ok(objTest.reduzirNumerosDaString(str) == strR, shared.formatarErro(str, strR));
+    })
+})
