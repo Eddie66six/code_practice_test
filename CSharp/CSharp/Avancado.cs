@@ -79,7 +79,7 @@ namespace CSharp
 
 
         ///
-        /// retornar um array com os parametro(querystring) de um url
+        /// retornar o index de um objeto no array
         /// ex: [
         ///  {a:1:b:2}
         ///  {a:5:b:10}
