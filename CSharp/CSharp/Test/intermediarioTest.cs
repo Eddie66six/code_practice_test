@@ -14,6 +14,10 @@ namespace CSharp.Test
             var str = "um macaco come banana";
             var strR = 5;
             Assert.IsTrue(objTest.ContarCaracteresA(str) == strR, shared.FormatarErro(str, strR.ToString()));
+
+            str = "um macaco come bananaaa";
+            strR = 7;
+            Assert.IsTrue(objTest.ContarCaracteresA(str) == strR, shared.FormatarErro(str, strR.ToString()));
         }
 
         [TestMethod]
@@ -22,6 +26,10 @@ namespace CSharp.Test
             var str = "Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo";
             var strR = false;
             Assert.IsTrue(objTest.ContarECompararCaracteresAO(str) == strR, shared.FormatarErro(str, strR.ToString()));
+
+            str = "ao";
+            strR = true;
+            Assert.IsTrue(objTest.ContarECompararCaracteresAO(str) == strR, shared.FormatarErro(str, strR.ToString()));
         }
 
         [TestMethod]
@@ -29,6 +37,10 @@ namespace CSharp.Test
         {
             var str = "Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo";
             var strR = new int[]{4, 7, 12, 15, 24, 27, 40, 43, 48, 59, 62, 66, 70, 75, 81, 87, 90, 93, 95, 101, 103};
+            Assert.IsTrue(string.Join(",", objTest.ObterIndexAO(str)) == string.Join(",", strR), shared.FormatarErro(str, string.Join(",", strR)));
+
+            str = "a";
+            strR = new int[]{0};
             Assert.IsTrue(string.Join(",", objTest.ObterIndexAO(str)) == string.Join(",", strR), shared.FormatarErro(str, string.Join(",", strR)));
         }
 
@@ -70,6 +82,14 @@ namespace CSharp.Test
             Assert.IsTrue(string.Join(",", 
                 objTest.TrocarPosicaoItem(array, value, newPosition)) == string.Join(",", strR),
                     shared.FormatarErro(string.Join(",", array), string.Join(",", strR)));
+
+            array = new int[]{1,2,3,4,5};
+            value = 5;
+            newPosition = 0;
+            strR = new int[]{5,2,1,3,4};
+            Assert.IsTrue(string.Join(",", 
+                objTest.TrocarPosicaoItem(array, value, newPosition)) == string.Join(",", strR),
+                    shared.FormatarErro(string.Join(",", array), string.Join(",", strR)));
         }
 
         [TestMethod]
@@ -77,6 +97,10 @@ namespace CSharp.Test
         {
             var str = "942";
             var strR = 6;
+            Assert.IsTrue(objTest.ReduzirNumerosDaString(str) == strR, shared.FormatarErro(str, strR.ToString()));
+
+            str = "16";
+            strR = 7;
             Assert.IsTrue(objTest.ReduzirNumerosDaString(str) == strR, shared.FormatarErro(str, strR.ToString()));
         }
     }
