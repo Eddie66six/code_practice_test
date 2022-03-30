@@ -28,7 +28,7 @@ namespace CSharp.Test
         public void IndexChar()
         {
             var str = "Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo";
-            var strR = new int[]{4, 7, 12, 27, 48, 62, 87};
+            var strR = new int[]{4, 7, 12, 15, 24, 27, 40, 43, 48, 59, 62, 66, 70, 75, 81, 87, 90, 93, 95, 101, 103};
             Assert.IsTrue(string.Join(",", objTest.ObterIndexAO(str)) == string.Join(",", strR), shared.FormatarErro(str, string.Join(",", strR)));
         }
 

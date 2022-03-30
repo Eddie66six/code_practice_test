@@ -18,7 +18,7 @@ void main() {
 
   test('index char', () {
     var str = 'Desta maneira, o fenômeno da Internet não pode mais se dissociar do processo de comunicação como um todo';
-    var strR = [4,7,12,15,24,27,40,43,48,59,62,66,70,75,81,87,90,93,95,101,103];
+    var strR = [4, 7, 12, 15, 24, 27, 40, 43, 48, 59, 62, 66, 70, 75, 81, 87, 90, 93, 95, 101, 103];
     expect(obterIndexAO(str).join('-'), strR.join('-'), reason: formatarErro(str, strR.join(',')));
   });
 
