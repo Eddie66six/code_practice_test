@@ -2,6 +2,13 @@
 /// validar e retornar o id do video do youtube, retornor null caso a url seja invalida
 /// ex: https://www.youtube.com/watch?v=xvQeQFfXk44
 /// r: xvQeQFfXk44
+/// tipo de url
+/// https://www.youtube.com/watch?v=xvQeQFfXk55
+/// https://youtu.be/yfl8G7FnHeB
+/// https://youtu.be/xvQeQFfXk44?t=142
+/// https://www.youtube.com/embed/7KLWpzHAtnn
+/// https://www.youtube.com/embed/YXsT2waDg7U?start=123
+///
 ///
 String obterIdVideoYouTube(String str){
   return "";
@@ -70,6 +77,7 @@ Map<String, dynamic> agruparObjetosPorCampo(List<Map<String, dynamic>> lstObj, S
 
 ///
 /// retornar o index de um objeto no array
+/// retornar -1 caso não encontre o objeto
 /// ex: [
 ///  {a:1:b:2}
 ///  {a:5:b:10}
