@@ -4,7 +4,7 @@
 /// r: morango
 ///
 String concatenar(String str1, String str2){
-  return "";
+  return str1+str2;
 }
 
 ///
@@ -13,7 +13,7 @@ String concatenar(String str1, String str2){
 /// r: ['mercado', 'livre']
 ///
 List<String> gerarArraySeparandoTextoPorEspaco(String str){
-  return [];
+  return str.split(" ");
 }
 
 ///
@@ -22,7 +22,7 @@ List<String> gerarArraySeparandoTextoPorEspaco(String str){
 /// r: true
 ///
 bool contarCaracteresIgnorandoEspaco(String str){
-  return true;
+  return str.split(" ").any((e) => e.length > 10);
 }
 
 ///
@@ -31,7 +31,7 @@ bool contarCaracteresIgnorandoEspaco(String str){
 /// r: ['a', 'b', 'h']
 ///
 List<String> adicionarItemNoArray(List<String> array, String str){
-  return [];
+  return array..add(str);
 }
 
 ///
@@ -40,7 +40,7 @@ List<String> adicionarItemNoArray(List<String> array, String str){
 /// r: ['a', 'b']
 ///
 List<String> removerItemDoArray(List<String >array, String str){
-  return[];
+  return array..remove(str);
 }
 
 ///
@@ -49,7 +49,7 @@ List<String> removerItemDoArray(List<String >array, String str){
 /// r: Guilherme
 ///
 String captalizarSimples(String str){
-  return "";
+  return str.substring(0,1).toUpperCase() + str.substring(1);
 }
 
 ///
@@ -58,5 +58,5 @@ String captalizarSimples(String str){
 /// r: Guilherme Vai Para O Mercado
 ///
 String captalizarAvancada(String str){
-  return "";
+  return str.split(" ").map((e) => e.substring(0,1).toUpperCase() + e.substring(1)).join(" ");
 }

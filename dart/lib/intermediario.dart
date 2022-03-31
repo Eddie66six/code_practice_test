@@ -4,7 +4,7 @@
 /// r: 3
 ///
 int contarCaracteresA(String str){
-  return 0;
+  return str.toLowerCase().replaceAll(r"[àáâãäå]","a").split('').where((e) => e == 'a').length;
 }
 
 ///
@@ -14,7 +14,9 @@ int contarCaracteresA(String str){
 /// r: false
 ///
 bool contarECompararCaracteresAO(String str){
-  return false;
+  var a = str.split('').where((e) => e == 'a').length;
+  var o = str.split('').where((e) => e == 'o').length;
+  return a == o;
 }
 
 ///
@@ -23,7 +25,16 @@ bool contarECompararCaracteresAO(String str){
 /// r: [8, 14, 16 ,19 ,23 ,28]
 ///
 List<int> obterIndexAO(String str){
-  return [];
+  var array = str.split('');
+  var result = <int>[];
+  for (var i = 0; i < array.length; i++) {
+    var item = array[i];
+    if(item == 'a' || item == 'o'){
+      result.add(i);
+    }
+    
+  }
+  return result;
 }
 
 ///
@@ -32,7 +43,7 @@ List<int> obterIndexAO(String str){
 /// r: oi meu nome é emrehliug
 ///
 String inverterParteDaString(String str){
-  return "";
+  return str.split(' ').map((e) => e.length > 4 ? e.split('').reversed.join('') : e).join(' ');
 }
 
 ///
@@ -43,7 +54,19 @@ String inverterParteDaString(String str){
 /// r: #### #6780
 ///
 String mascararString(String str){
-  return "";
+  var array = str.split('');
+  var maxIndex = array.length-4;
+  var result = "";
+  for (var i = 0; i < array.length; i++) {
+    var item = array[i];
+    if(i < maxIndex && item != " "){
+      result += "#";
+    }
+    else{
+      result += item;
+    }
+  }
+  return result;
 }
 
 ///
@@ -58,7 +81,10 @@ String mascararString(String str){
 /// r: [2, 2, 1, 3]
 ///
 List<int> trocarPosicaoItem(List<int> array, int value, int newPosition){
-  return [];
+    var item = array.firstWhere((e) => e == value);
+    array.remove(item);
+    array.insert(newPosition, item);
+    return array;
 }
 
 ///
@@ -68,5 +94,10 @@ List<int> trocarPosicaoItem(List<int> array, int value, int newPosition){
 /// r: 6
 ///
 int reduzirNumerosDaString(String str){
-  return -1;
+  var arrayInt = str.split('').map((e) => int.parse(e));
+    var result = arrayInt.reduce((p, c) => p + c);
+    if(result > 9){
+        result = reduzirNumerosDaString(result.toString());
+    }
+    return result;
 }
