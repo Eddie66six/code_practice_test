@@ -4,6 +4,7 @@
  * r: morango
 */
 function concatenar(str1, str2){
+    return str1 + str2;
 }
 
 /**
@@ -12,6 +13,7 @@ function concatenar(str1, str2){
  * r: ['mercado', 'livre']
 */
 function gerarArraySeparandoTextoPorEspaco(str){
+    return str.split(' ');
 }
 
 /**
@@ -20,6 +22,7 @@ function gerarArraySeparandoTextoPorEspaco(str){
  * r: true
 */
 function contarCaracteresIgnorandoEspaco(str){
+    return str.replace(' ', '').split('').length > 10;
 }
 
 /**
@@ -28,6 +31,8 @@ function contarCaracteresIgnorandoEspaco(str){
  * r: ['a', 'b', 'h']
 */
 function adicionarItemNoArray(array, str){
+    array.push(str);
+    return array;
 }
 
 /**
@@ -36,6 +41,9 @@ function adicionarItemNoArray(array, str){
  * r: ['a', 'b']
 */
 function removerItemDoArray(array, str){
+    var index = array.indexOf(str);
+    if(index > -1) array.splice(index, 1);
+    return array;
 }
 
 /**
@@ -44,6 +52,7 @@ function removerItemDoArray(array, str){
  * r: Guilherme
 */
 function captalizarSimples(str){
+    return str.substring(0, 1).toUpperCase() + str.substring(1);
 }
 
 /**
@@ -52,6 +61,11 @@ function captalizarSimples(str){
  * r: Guilherme Vai Para O Mercado
 */
 function captalizarAvancada(str){
+    var array = str.split(' ');
+    for (let index = 0; index < array.length; index++) {
+        array[index] = array[index].substring(0, 1).toUpperCase() + array[index].substring(1);
+    }
+    return array.join(' ');
 }
 
 

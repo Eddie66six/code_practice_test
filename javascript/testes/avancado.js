@@ -33,7 +33,14 @@ describe("url youtube", function() {
 describe("parametro url", function() {
     it("teste 1", function() {
         let str = "https://urlQualquer?parametro=1&p=2&nome=guilherme";
-        let strR = {parametro: "1", p: "2", nome: "guilherme"};
+        let strR = {nome: "guilherme", parametro: "1", p: "2"};
+        assert.ok(shared.equalsObj(objTest.obterParametrosQueryString(str), strR),
+            shared.formatarErro(str, JSON.stringify(strR)));
+    })
+
+    it("teste 2", function() {
+        let str = "https://urlQualquer?novoParametro=1&p=2&nome=guilherme";
+        let strR = {nome: "guilherme", novoParametro: "1", p: "2"};
         assert.ok(shared.equalsObj(objTest.obterParametrosQueryString(str), strR),
             shared.formatarErro(str, JSON.stringify(strR)));
     })
@@ -58,6 +65,26 @@ describe("agrupamento obj", function() {
             };
         assert.ok(shared.equalsObj(objTest.agruparObjetosPorCampo(lstObj, field), strR), shared.formatarErro(JSON.stringify(lstObj), JSON.stringify(strR)));
     })
+
+    it("teste 2", function() {
+        let lstObj = [
+            {"nome":"a", "idade": 19, "dataNascimento": "23/05/1991"},
+            {"nome":"b", "idade": 18, "dataNascimento": "23/06/1991"},
+            {"nome":"c", "idade": 18, "dataNascimento": "23/05/1991"}
+        ];
+        let field = "dataNascimento";
+        let strR = {
+                "23/05/1991": [
+                    {"nome":"a", "idade": 19, "dataNascimento": "23/05/1991"},
+                    {"nome":"c", "idade": 18, "dataNascimento": "23/05/1991"}
+
+                ],
+                "23/06/1991": [
+                    {"nome":"b", "idade": 18, "dataNascimento": "23/06/1991"},
+                ]
+            };
+        assert.ok(shared.equalsObj(objTest.agruparObjetosPorCampo(lstObj, field), strR), shared.formatarErro(JSON.stringify(lstObj), JSON.stringify(strR)));
+    })
 })
 
 describe("index do obj", function() {
@@ -68,6 +95,17 @@ describe("index do obj", function() {
         ];
         let objBusca = {"a":5, "b":10};
         let strR = 1;
+        assert.ok(objTest.obterIndexListaObj(lstObjs, objBusca) == strR,
+            shared.formatarErro(JSON.stringify(lstObjs), strR));
+    })
+
+    it("teste 2", function() {
+        let lstObjs = [
+            {"a":1, "b":2},
+            {"a":5, "b":10}
+        ];
+        let objBusca = {"b":10};
+        let strR = -1;
         assert.ok(objTest.obterIndexListaObj(lstObjs, objBusca) == strR,
             shared.formatarErro(JSON.stringify(lstObjs), strR));
     })

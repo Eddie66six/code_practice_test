@@ -4,6 +4,7 @@
  * r: 3
 */
 function contarCaracteresA(str){
+    return str.toLowerCase().replace(/[àáâãäå]/,"a").split('').filter((e)=> e == 'a').length;
 }
 
 /**
@@ -13,6 +14,9 @@ function contarCaracteresA(str){
  * r: false
 */
 function contarECompararCaracteresAO(str){
+    var a = str.split('').filter((e) => e == 'a').length;
+    var o = str.split('').filter((e) => e == 'o').length;
+    return a == o;
 }
 
 /**
@@ -21,6 +25,7 @@ function contarECompararCaracteresAO(str){
  * r: [8, 14, 16 ,19 ,23 ,28]
 */
 function obterIndexAO(str){
+    return str.split('').map((e, i) => e == 'a' || e == 'o' ? i : undefined).filter((e) => e || e == 0);
 }
 
 /**
@@ -29,6 +34,7 @@ function obterIndexAO(str){
  * r: oi meu nome é emrehliug
 */
 function inverterParteDaString(str){
+    return str.split(' ').map((e) => e.length > 4 ? e.split('').reverse().join('') : e).join(' ');
 }
 
 /**
@@ -39,6 +45,7 @@ function inverterParteDaString(str){
  * r: #### #6780
 */
 function mascararString(str){
+    return str.split('').map((e, i) => i < str.length -4 && e != ' ' ? '#' : e).join('');
 }
 
 
@@ -54,6 +61,13 @@ function mascararString(str){
  * r: [2, 2, 1, 3]
 */
 function trocarPosicaoItem(array, value, newPosition){
+    var index = array.indexOf(value);
+    if(index > -1){
+        var item = array[index];
+        array.splice(index, 1);
+        array.splice(newPosition, 0, item);
+    }
+    return array;
 }
 
 /**
@@ -62,6 +76,12 @@ function trocarPosicaoItem(array, value, newPosition){
  * r:: 9 + 4 + 2 = 15  -->  1 + 5 = 6
 */
 function reduzirNumerosDaString(str){
+    var arrayInt = str.split('').map((e) => parseInt(e));
+    var result = arrayInt.reduce((p, c) => p + c);
+    if(result > 9){
+        result = reduzirNumerosDaString(result.toString());
+    }
+    return result;
 }
 
 

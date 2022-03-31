@@ -2,8 +2,18 @@
  * validar e retornar o id do video do youtube, retornor null caso a url seja invalida
  * ex: https://www.youtube.com/watch?v=xvQeQFfXk44
  * r: xvQeQFfXk44
+ * 
+ * tipo de url
+ * https://www.youtube.com/watch?v=xvQeQFfXk55
+ * https://youtu.be/yfl8G7FnHeB
+ * https://youtu.be/xvQeQFfXk44?t=142
+ * https://www.youtube.com/embed/7KLWpzHAtnn
+ * https://www.youtube.com/embed/YXsT2waDg7U?start=123
+ * 
 */
 function obterIdVideoYouTube(str){
+    return str.replace(/http[s|]?:\/\/((youtu\.be\/)|www\.youtube\.com\/)(watch\?v\=)?(embed\/)?/, '')
+    .replace(/\?.*/, '');
 }
 
 /**
@@ -12,6 +22,13 @@ function obterIdVideoYouTube(str){
  * r: {parametro: '1',nome: '2',nome: 'guilherme'}
 */
 function obterParametrosQueryString(str){
+    var param = str.replace(/.*\?/, '').split('&');
+    var result = {};
+    for (const p in param) {
+        var arrayP = p.split('=');
+        result[arrayP[0]] = arrayP[1];
+    }
+    return result;
 }
 
 /**
@@ -63,10 +80,24 @@ function obterParametrosQueryString(str){
  * }
 */
 function agruparObjetosPorCampo(lstObj, campo){
+    var group = {};
+    for (let index = 0; index < lstObj.length; index++) {
+        const obj = lstObj[index];
+        let val = obj[campo];
+        if(group[val]){
+            group[val].push(obj)
+        }
+        else{
+            group[val] = [obj];
+        }
+        
+    }
+    return group;
 }
 
 /**
  * retornar o index de um objeto no array
+ * retornar -1 caso não encontre o objeto
  * ex: [
  *  {a:1:b:2}
  *  {a:5:b:10}
@@ -75,6 +106,24 @@ function agruparObjetosPorCampo(lstObj, campo){
  * r: 0
 */
 function obterIndexListaObj(lstObj, objBusca){
+    var keys = Object.keys(objBusca);
+    for (let index = 0; index < lstObj.length; index++) {
+        const obj = lstObj[index];
+        if(Object.keys(obj).length != keys.length) continue;
+
+        let found = true;
+        for (let indexK = 0; indexK < keys.length; indexK++) {
+            const key = keys[indexK];
+            if(objBusca[key] != obj[key]){
+                found = false;
+                break;
+            }
+        }
+        if(found){
+            return index;
+        }
+    }
+    return -1;
 }
 
 
