@@ -69,7 +69,7 @@ namespace CSharp.Test
 
             str = "1234 56780";
             strR = "#### #6780";
-            Assert.IsTrue(objTest.InverterParteDaString(str) == strR, shared.FormatarErro(str, strR));
+            Assert.IsTrue(objTest.MascararString(str) == strR, shared.FormatarErro(str, strR));
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace CSharp.Test
             array = new int[]{1,2,3,4,5};
             value = 5;
             newPosition = 0;
-            strR = new int[]{5,2,1,3,4};
+            strR = new int[]{5,1,2,3,4};
             Assert.IsTrue(string.Join(",", 
                 objTest.TrocarPosicaoItem(array, value, newPosition)) == string.Join(",", strR),
                     shared.FormatarErro(string.Join(",", array), string.Join(",", strR)));
