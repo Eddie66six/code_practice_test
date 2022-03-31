@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CSharp.Test
 {
@@ -43,6 +42,12 @@ namespace CSharp.Test
                 {"parametro", "1"}, {"p", "2"}, {"nome", "guilherme"}
             };
             Assert.IsTrue(shared.EqualsDictionary(objTest.ObterParametrosQueryString(str), strR), shared.FormatarErro(str, JsonConvert.SerializeObject(strR)));
+
+            str = "https://urlQualquer?novoParametro=1&p=2&nome=guilherme";
+            strR = new Dictionary<string, string>() {
+                {"nome", "guilherme"}, {"novoParametro", "1"}, {"p", "2"}
+            };
+            Assert.IsTrue(shared.EqualsDictionary(objTest.ObterParametrosQueryString(str), strR), shared.FormatarErro(str, JsonConvert.SerializeObject(strR)));
         }
 
         [TestMethod]
@@ -68,6 +73,22 @@ namespace CSharp.Test
                 }
             };
             Assert.IsTrue(shared.EqualsDictionary(objTest.AgruparObjetosPorCampo(lstObj, field), strR), shared.FormatarErro(JsonConvert.SerializeObject(lstObj), JsonConvert.SerializeObject(strR)));
+
+            field = "dataNascimento";
+            strR = new Dictionary<string, object[]>(){
+                {
+                    "23/05/1991", new [] {
+                        new { nome= "a", idade= 19, dataNascimento= "23/05/1991" },
+                        new { nome= "c", idade= 18, dataNascimento= "23/05/1991" }
+                    }
+                },
+                {
+                   "23/06/1991", new [] {
+                        new { nome= "b", idade= 18, dataNascimento= "23/06/1991" },
+                   } 
+                }
+            };
+            Assert.IsTrue(shared.EqualsDictionary(objTest.AgruparObjetosPorCampo(lstObj, field), strR), shared.FormatarErro(JsonConvert.SerializeObject(lstObj), JsonConvert.SerializeObject(strR)));
         }
 
         [TestMethod]
@@ -80,6 +101,10 @@ namespace CSharp.Test
             var objBusca = new { a= 5, b = 10};
             var strR = 1;
             Assert.IsTrue(objTest.ObterIndexListaObj(lstObj, objBusca) == strR, shared.FormatarErro(JsonConvert.SerializeObject(lstObj), strR.ToString()));
+
+            var objBusca2 = new { b = 10};
+            strR = -1;
+            Assert.IsTrue(objTest.ObterIndexListaObj(lstObj, objBusca2) == strR, shared.FormatarErro(JsonConvert.SerializeObject(lstObj), strR.ToString()));
         }
     }
 }

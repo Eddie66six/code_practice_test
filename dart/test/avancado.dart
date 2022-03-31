@@ -41,6 +41,13 @@ group('parametro url', () {
         expect(equalsObj(obterParametrosQueryString(str), strR), true,
             reason: formatarErro(str, json.encode(strR)));
     });
+
+    test('teste 2', () {
+        var str = "https://urlQualquer?novoParametro=1&p=2&nome=guilherme";
+        var strR = {"nome": "guilherme", "novoParametro": "1", "p": "2"};
+        expect(equalsObj(obterParametrosQueryString(str), strR), true,
+            reason: formatarErro(str, json.encode(strR)));
+    });
 });
 
 group('agrupamento obj', () {
@@ -63,6 +70,26 @@ group('agrupamento obj', () {
 
         expect(equalsObj(agruparObjetosPorCampo(lstObj, field), strR), true, reason: formatarErro(json.encode(lstObj), json.encode(strR)));
     });
+
+    test('teste 2', () {
+        var lstObj = [
+            {'nome':'a', 'idade': 19, 'dataNascimento': '23/05/1991'},
+            {'nome':'b', 'idade': 18, 'dataNascimento': '23/06/1991'},
+            {'nome':'c', 'idade': 18, 'dataNascimento': '23/05/1991'}
+        ];
+        var field = 'dataNascimento';
+        var strR = {
+                '23/05/1991': [
+                    {'nome':'a', 'idade': 19, 'dataNascimento': '23/05/1991'},
+                    {'nome':'c', 'idade': 18, 'dataNascimento': '23/05/1991'}
+                ],
+                '23/06/1991': [
+                    {'nome':'b', 'idade': 18, 'dataNascimento': '23/06/1991'},
+                ]
+            };
+
+        expect(equalsObj(agruparObjetosPorCampo(lstObj, field), strR), true, reason: formatarErro(json.encode(lstObj), json.encode(strR)));
+    });
 });
 
 group('index do obj', () {
@@ -73,6 +100,17 @@ group('index do obj', () {
         ];
         var objBusca = {'a':5, 'b':10};
         var strR = 1;
+        expect(obterIndexListaObj(lstObjs, objBusca), strR,
+            reason: formatarErro(json.encode(lstObjs), json.encode(strR)));
+    });
+
+    test('teste 2', () {
+        var lstObjs = [
+            {'a':1, 'b':2},
+            {'a':5, 'b':10}
+        ];
+        var objBusca = {'b':10};
+        var strR = -1;
         expect(obterIndexListaObj(lstObjs, objBusca), strR,
             reason: formatarErro(json.encode(lstObjs), json.encode(strR)));
     });
