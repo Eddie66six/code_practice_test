@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CSharp
 {
@@ -18,7 +19,11 @@ namespace CSharp
         /// https://www.youtube.com/embed/YXsT2waDg7U?start=123
         ///
         public string ObterIdVideoYouTube(string str){
-            return "";
+            var id = Regex.Replace(
+                Regex.Replace(str, @"http[s|]?:\/\/((youtu\.be\/)|www\.youtube\.com\/)(watch\?v\=)?(embed\/)?", ""),
+                @"\?.*", ""
+            );
+            return id;
         }
 
         ///
@@ -27,7 +32,14 @@ namespace CSharp
         /// r: {parametro: '1',nome: '2',nome: 'guilherme'}
         ///
         public Dictionary<string, string> ObterParametrosQueryString(string str){
-            return null;
+            var param = Regex.Replace(str, @".*\?", "").Split("&");
+            var result = new Dictionary<string, string>();
+            foreach (var p in param)
+            {
+                var arrayP = p.Split("=");
+                result[arrayP[0]] = arrayP[1];
+            }
+            return result;
         }
 
         ///
@@ -80,7 +92,26 @@ namespace CSharp
         /// }
         ///
         public Dictionary<string, object[]> AgruparObjetosPorCampo(object[] lstObj, string campo){
-            return null;
+            var result = new Dictionary<string, object[]>();
+            foreach (var item in lstObj)
+            {
+                var val = item.GetType().GetProperty(campo).GetValue(item, null).ToString();
+                if (result.ContainsKey(val))
+                {
+                    var lst = new object[result[val].Length + 1];
+                    for (int i = 0; i < result[val].Length; i++)
+                    {
+                        lst[i] = result[val][i];
+                    }
+                    lst[lst.Length-1] = item;
+                    result[val] = lst;
+                }
+                else
+                {
+                    result[val] = new object[] { item };
+                }
+            }
+            return result;
         }
 
 
@@ -96,7 +127,29 @@ namespace CSharp
         /// r: 0
         ///
         public int ObterIndexListaObj(object[] lstObj, object objBusca){
-            return -1;
+            var index = -1;
+            for (int i = 0; i < lstObj.Length; i++)
+            {
+                var props = lstObj[i].GetType().GetProperties();
+                if (objBusca.GetType().GetProperties().Length != props.Length) continue;
+                var equal = true;
+                foreach (var prop in props)
+                {
+                    var valI = prop.GetValue(lstObj[i], null);
+                    var valB = objBusca.GetType().GetProperty(prop.Name).GetValue(objBusca, null);
+                    if(valI.ToString() != valB.ToString())
+                    {
+                        equal = false;
+                        break;
+                    }
+                }
+                if (equal)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
         }
     }
 }
