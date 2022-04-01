@@ -79,12 +79,12 @@ Map<String, dynamic> agruparObjetosPorCampo(List<Map<String, dynamic>> lstObj, S
 /// retornar o index de um objeto no array
 /// retornar -1 caso não encontre o objeto
 /// ex: [
-///  {a:1:b:2}
-///  {a:5:b:10}
+///  {a:1,b:2}
+///  {a:5,b:10}
 /// ]
-/// objBusca: {a:1:b:2}
+/// objBusca: {a:1,b:2}
 /// r: 0
 ///
-int obterIndexListaObj(List<Map<String, dynamic>> lstObj, dynamic objBusca){
+int obterIndexListaObj(List<Map<String, dynamic>> lstObj, Map<String, dynamic> objBusca){
   return -1;
 }

@@ -3,7 +3,7 @@ String formatarErro(String str, String strR){
 }
 
 bool equalsObj(Map<String, dynamic> obj1, Map<String, dynamic> obj2){
-    if(obj1.keys.length != obj1.keys.length) return false;
+    if(obj1.keys.length != obj2.keys.length) return false;
     var isEquals = true;
     for (var key in obj1.keys) {
         if(obj1[key] is Map && obj2[key] is Map){
@@ -18,6 +18,7 @@ bool equalsObj(Map<String, dynamic> obj1, Map<String, dynamic> obj2){
             isEquals = false;
             break;
           }
+          if(obj1[key].runtimeType.toString() != "List<Map<String, dynamic>>") return false;
           isEquals = equalsListObjs(obj1[key], obj2[key]);
           if(!isEquals){
             isEquals = false;
