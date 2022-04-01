@@ -11,7 +11,9 @@
 ///
 ///
 String obterIdVideoYouTube(String str){
-  return "";
+  var id = str.replaceAll(RegExp(r'http[s|]?:\/\/((youtu\.be\/)|www\.youtube\.com\/)(watch\?v\=)?(embed\/)?'), '')
+    .replaceAll(RegExp(r'\?.*'), '');
+  return id;
 }
 
 ///
@@ -20,7 +22,13 @@ String obterIdVideoYouTube(String str){
 /// r: {parametro: '1',nome: '2',nome: 'guilherme'}
 ///
 Map<String, dynamic> obterParametrosQueryString(String str){
-  return {};
+  var param = str.replaceAll(RegExp(r'.*\?'), '').split('&');
+    var result = <String, dynamic>{};
+    for (var p in param) {
+        var arrayP = p.split('=');
+        result[arrayP[0]] = arrayP[1];
+    }
+    return result;
 }
 
 ///
@@ -72,19 +80,46 @@ Map<String, dynamic> obterParametrosQueryString(String str){
 /// }
 ///
 Map<String, dynamic> agruparObjetosPorCampo(List<Map<String, dynamic>> lstObj, String campo){
-  return {};
+  var result = <String, dynamic>{};
+  for (var item in lstObj) {
+    if(result[item[campo].toString()] == null){
+      result[item[campo].toString()] = [item];
+    }
+    else{
+      var currentList = (result[item[campo].toString()] as List<Map<String, dynamic>>);
+      result[item[campo].toString()] = [
+        ...currentList, item];
+    }
+  }
+  return result;
 }
 
 ///
 /// retornar o index de um objeto no array
 /// retornar -1 caso não encontre o objeto
 /// ex: [
-///  {a:1:b:2}
-///  {a:5:b:10}
+///  {a:1,b:2}
+///  {a:5,b:10}
 /// ]
-/// objBusca: {a:1:b:2}
+/// objBusca: {a:1,b:2}
 /// r: 0
 ///
-int obterIndexListaObj(List<Map<String, dynamic>> lstObj, dynamic objBusca){
-  return -1;
+int obterIndexListaObj(List<Map<String, dynamic>> lstObj, Map<String, dynamic> objBusca){
+  var index = -1;
+  for (var i = 0; i < lstObj.length; i++) {
+    var item = lstObj[i];
+    if(item.keys.length != objBusca.keys.length) continue;
+    var equal = true;
+    for (var key in item.keys) {
+      if(item[key] != objBusca[key]){
+        equal = false;
+        break;
+      }
+    }
+    if(equal){
+      index = i;
+      break;
+    }
+  }
+  return index;
 }
