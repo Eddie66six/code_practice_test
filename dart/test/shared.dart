@@ -2,6 +2,53 @@ String formatarErro(String str, String strR){
     return 'parametro(s):' + str + ' esperado -> ' + strR;
 }
 
+const _primitiveTypesPattern = r"int|double|num|String|bool";
+
+String? _isPrimitiveType(dynamic type){
+  var _type = type.runtimeType.toString();
+  if(_type.contains("List")){
+    _type = _type.replaceAll("List", "").replaceAll("<", "").replaceAll(">", "");
+  }
+  if(_type.contains(_primitiveTypesPattern)){
+    return _type;
+  }
+  return null;
+}
+
+bool _isMapStringDynamic(dynamic obj){
+  return obj.runtimeType.toString() == "List<Map<String, dynamic>>";
+}
+
+bool equalsList(List<dynamic> lst1, List<dynamic> lst2){
+  if(lst1.length != lst2.length) return false;
+  var primitiveType1 = _isPrimitiveType(lst1);
+  var primitiveType2 = _isPrimitiveType(lst2);
+  if(primitiveType1 != primitiveType2) return false;
+
+  var isPrimitive = primitiveType1 != null;
+  var equals = true;
+  for (var index = 0; index < lst1.length; index++) {
+    for (var index1 = 0; index1 < lst2.length; index1++) {
+      if(isPrimitive && lst1[index] != lst2[index1]){
+        equals = false;
+        break;
+      }
+      else if(!_isMapStringDynamic(lst1[index]) || _isMapStringDynamic(lst2[index1])){
+        equals = false;
+        break;
+      }
+      else if(!equalsObj(lst1[index], lst2[index1])){
+        equals = false;
+        break;
+      }
+    }
+    if(!equals){
+      break;
+    }
+  }
+  return equals;
+}
+
 bool equalsObj(Map<String, dynamic> obj1, Map<String, dynamic> obj2){
     if(obj1.keys.length != obj2.keys.length) return false;
     var isEquals = true;

@@ -86,8 +86,17 @@ function agruparObjetosPorCampo(lstObj, campo){
 function obterIndexListaObj(lstObj, objBusca){
 }
 
+/**
+ * retorna uma lista de url encontradas dentro de uma string
+ * ex: uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg
+ * r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
+*/
+function obterUrlDentroDaString(str){
+}
+
 
 exports.obterIdVideoYouTube = obterIdVideoYouTube;
 exports.obterParametrosQueryString = obterParametrosQueryString;
 exports.agruparObjetosPorCampo = agruparObjetosPorCampo;
 exports.obterIndexListaObj = obterIndexListaObj;
+exports.obterUrlDentroDaString = obterUrlDentroDaString;

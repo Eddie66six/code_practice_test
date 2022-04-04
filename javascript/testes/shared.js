@@ -2,6 +2,23 @@ function formatarErro(str, strR){
     return 'parametro(s):' + str + ' esperado -> ' + strR;
 }
 
+function equalsList(lst1, lst2){
+  if(lst1.length != lst2.length) return false;
+  var equals = true;
+  for (let index = 0; index < lst1.length; index++) {
+    for (let index1 = 0; index1 < lst2.length; index1++) {
+      if(!equalsObj(lst1[index], lst2[index1])){
+        equals = false;
+        break;
+      }
+    }
+    if(!equals){
+      break;
+    }
+  }
+  return equals;
+}
+
 function equalsObj(obj1, obj2){
     if(!obj1 || !obj2) return false;
     keysObj1 = Object.keys(obj1).sort();
@@ -53,3 +70,4 @@ function equalsListObjs(lst1, lst2){
 
 exports.formatarErro = formatarErro;
 exports.equalsObj = equalsObj;
+exports.equalsList = equalsList;
