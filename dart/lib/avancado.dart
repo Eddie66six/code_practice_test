@@ -122,7 +122,6 @@ int obterIndexListaObj(List<Map<String, dynamic>> lstObj, Map<String, dynamic> o
     }
   }
   return index;
-  return -1;
 }
 
 ///
@@ -131,5 +130,8 @@ int obterIndexListaObj(List<Map<String, dynamic>> lstObj, Map<String, dynamic> o
 ///r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
 ///
 List<String> obterUrlDentroDaString(String str){
-  return [];
+  var re = RegExp(r'(?:(?:https?\:\/\/|www\.)[^\s]+)', multiLine: true);
+  var lst = <String>[];
+  re.allMatches(str).forEach((e) => lst.add(str.substring(e.start, e.end)));
+  return lst;
 }

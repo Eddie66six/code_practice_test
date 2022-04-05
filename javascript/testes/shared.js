@@ -5,8 +5,9 @@ function formatarErro(str, strR){
 function equalsList(lst1, lst2){
   if(lst1.length != lst2.length) return false;
   if(typeof(lst1) != typeof(lst2)) return false;
+  var equals = false;
   for (let index = 0; index < lst1.length; index++) {
-    var equals = false;
+    equals = false;
     for (let index1 = 0; index1 < lst2.length; index1++) {
       if(typeof(lst1) != 'object'){
         if(lst1[index] = lst2[index1]){
