@@ -110,3 +110,19 @@ describe("index do obj", function() {
             shared.formatarErro(JSON.stringify(lstObjs), strR));
     })
 })
+
+describe("url dentro da string", function() {
+    it("teste 1", function() {
+        let str = "uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg";
+        let strR = ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"];
+        assert.ok(shared.equalsList(objTest.obterUrlDentroDaString(lstObjs, objBusca), strR),
+            shared.formatarErro(JSON.stringify(str), JSON.stringify(str)));
+    })
+
+    it("teste 2", function() {
+        let str = "um macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg e outro aqui https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612";
+        let strR = ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg", "https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612"];
+        assert.ok(shared.equalsList(objTest.obterUrlDentroDaString(lstObjs, objBusca), strR),
+            shared.formatarErro(JSON.stringify(str), JSON.stringify(str)));
+    })
+})

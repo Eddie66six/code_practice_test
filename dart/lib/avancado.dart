@@ -122,4 +122,14 @@ int obterIndexListaObj(List<Map<String, dynamic>> lstObj, Map<String, dynamic> o
     }
   }
   return index;
+  return -1;
+}
+
+///
+///retorna uma lista de url encontradas dentro de uma string
+///ex: uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg
+///r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
+///
+List<String> obterUrlDentroDaString(String str){
+  return [];
 }

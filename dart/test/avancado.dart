@@ -115,4 +115,18 @@ group('index do obj', () {
             reason: formatarErro(json.encode(lstObjs), json.encode(strR)));
     });
 });
+
+group("url dentro da string", () {
+    test("teste 1", () {
+        var str = "uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg";
+        var strR = ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"];
+        expect(equalsList(obterUrlDentroDaString(str), strR), formatarErro(str, json.encode(strR)));
+    });
+
+    test("teste 2", () {
+        var str = "um macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg e outro aqui https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612";
+        var strR = ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg", "https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612"];
+        expect(equalsList(obterUrlDentroDaString(str), strR), formatarErro(str, json.encode(strR)));
+    });
+});
 }

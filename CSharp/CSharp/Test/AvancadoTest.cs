@@ -106,5 +106,16 @@ namespace CSharp.Test
             strR = -1;
             Assert.IsTrue(objTest.ObterIndexListaObj(lstObj, objBusca2) == strR, shared.FormatarErro(JsonConvert.SerializeObject(lstObj), strR.ToString()));
         }
+
+        [TestMethod]
+        public void UrlDentroDaString(){
+            var str = "uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg";
+            var strR = new string[]{"https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"};
+            Assert.IsTrue(shared.EqualsObj(objTest.ObterUrlDentroDaString(str), strR), shared.FormatarErro(str, JsonConvert.SerializeObject(strR)));
+
+            str = "um macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg e outro aqui https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612";
+            strR = new string[]{"https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg", "https://media.istockphoto.com/vectors/cartoon-evil-monkey-vector-id511526813?s=612x612"};
+            Assert.IsTrue(shared.EqualsObj(objTest.ObterUrlDentroDaString(str), strR), shared.FormatarErro(str, JsonConvert.SerializeObject(strR)));
+        }
     }
 }

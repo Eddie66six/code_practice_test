@@ -126,8 +126,25 @@ function obterIndexListaObj(lstObj, objBusca){
     return -1;
 }
 
+/**
+ * retorna uma lista de url encontradas dentro de uma string
+ * ex: uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg
+ * r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
+*/
+function obterUrlDentroDaString(str){
+    // RegExp regExp = RegExp(
+    //     r"(((http|https)\:\/\/)|(www\.)(.+\.)|[a-z\d]+\.)[^\s()]+",
+    //     caseSensitive: false,
+    //     multiLine: true,
+    //   );
+    //   var lst = <String>[];
+    //   regExp.allMatches(this).forEach((math) => lst.add(substring(math.start, math.end)));
+    //   return lst;
+}
+
 
 exports.obterIdVideoYouTube = obterIdVideoYouTube;
 exports.obterParametrosQueryString = obterParametrosQueryString;
 exports.agruparObjetosPorCampo = agruparObjetosPorCampo;
 exports.obterIndexListaObj = obterIndexListaObj;
+exports.obterUrlDentroDaString = obterUrlDentroDaString;

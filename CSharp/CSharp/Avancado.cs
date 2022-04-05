@@ -151,5 +151,14 @@ namespace CSharp
             }
             return index;
         }
+
+        ///
+        ///retorna uma lista de url encontradas dentro de uma string
+        ///ex: uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg
+        ///r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
+        ///
+        public List<string> ObterUrlDentroDaString(string str){
+            return new List<string>();
+        }
     }
 }
