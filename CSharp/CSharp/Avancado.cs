@@ -104,8 +104,8 @@ namespace CSharp
         ///ex: uma macaco aqui https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg
         ///r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
         ///
-        public List<string> ObterUrlDentroDaString(string str){
-            return new List<string>();
+        public string[] ObterUrlDentroDaString(string str){
+            return new string[0];
         }
     }
 }

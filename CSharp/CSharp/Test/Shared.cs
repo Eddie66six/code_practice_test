@@ -17,10 +17,12 @@ namespace CSharp.Test
             return type.IsArray || type.Name.Contains("List");
         }
 
-        public bool EqualsDictionary(Dictionary<string, string> d1, Dictionary<string, string> d2){
+        public bool EqualsDictionary(Dictionary<string, string> d1, Dictionary<string, string> d2)
+        {
             return d1.OrderBy(kvp => kvp.Key).SequenceEqual(d2.OrderBy(kvp => kvp.Key));
         }
-        public bool EqualsDictionary(Dictionary<string, object[]> d1, Dictionary<string, object[]> d2){
+        public bool EqualsDictionary(Dictionary<string, object[]> d1, Dictionary<string, object[]> d2)
+        {
             if (d1.Count != d2.Count) return false;
             foreach (var item in d1)
             {
@@ -54,14 +56,14 @@ namespace CSharp.Test
 
             if (_IsPrimitiveType(obj1.GetType()))
             {
-                if (obj1 != obj2)
+                if (obj1.ToString() != obj2.ToString())
                 {
                     return false;
                 }
                 return true;
             }
 
-            var propsObj1 = obj1.GetType().GetProperties().OrderBy(p=> p.Name).ToArray();
+            var propsObj1 = obj1.GetType().GetProperties().OrderBy(p => p.Name).ToArray();
             var propsObj2 = obj2.GetType().GetProperties().OrderBy(p => p.Name).ToArray();
 
             if (propsObj1.Length != propsObj2.Length) return false;
