@@ -132,14 +132,8 @@ function obterIndexListaObj(lstObj, objBusca){
  * r: ["https://imgpt.hellokids.com/_uploads/_tiny_galerie/20091044/how-to-draw-monkey-source_1a7.jpg"]
 */
 function obterUrlDentroDaString(str){
-    // RegExp regExp = RegExp(
-    //     r"(((http|https)\:\/\/)|(www\.)(.+\.)|[a-z\d]+\.)[^\s()]+",
-    //     caseSensitive: false,
-    //     multiLine: true,
-    //   );
-    //   var lst = <String>[];
-    //   regExp.allMatches(this).forEach((math) => lst.add(substring(math.start, math.end)));
-    //   return lst;
+    var array = str.match(/(?:(?:https?\:\/\/|www\.)[^\s]+)/g);
+    return array;
 }
 
 
