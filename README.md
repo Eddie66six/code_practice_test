@@ -27,13 +27,13 @@
 <ol>
   <li>javascript
     <ul>
-      <li>open folder language</li>
+      <li>open the language foldere</li>
       <li>npm i</li>
     </ul>
   </li>
   <li>dart
     <ul>
-      <li>open folder language</li>
+      <li>open the language folder</li>
       <li>flutter pub get</li>
     </ul>
   </li>
@@ -43,7 +43,7 @@
 <ol>
   <li>javascript
     <ul>
-      <li>open folder language</li>
+      <li>open the language folder</li>
       <li>put the code in the codes folder</li>
       <li>run command
         <ul>
@@ -56,7 +56,7 @@
   </li>
   <li>dart
     <ul>
-      <li>open folder language</li>
+      <li>open the language folder</li>
       <li>put the code in the lib folder</li>
       <li>run command
         <ul>
@@ -69,7 +69,7 @@
   </li>
   <li>c#
     <ul>
-      <li>open folder language</li>
+      <li>open the language folder</li>
       <li>open project</li>
       <li>put the code in the files</li>
       <li>open test explorer
